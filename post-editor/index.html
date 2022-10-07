@@ -39,8 +39,21 @@
         </header>
 
         <main>
-            <p id="error-display" class="error"></p>
-            <ul id="post-list"></ul>
+            <form id="post-form">
+                <label>
+                    <div>Title</div>
+                    <input name="title" required placeholder="Add a title" />
+                </label>
+                <label>
+                    <div>Body</div>
+                    <textarea
+                        name="body"
+                        required
+                        placeholder="What do you want to say?"
+                    ></textarea>
+                </label>
+                <button>Add post</button>
+            </form>
         </main>
     </body>
 </html>

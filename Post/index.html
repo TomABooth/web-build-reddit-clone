@@ -39,8 +39,19 @@
         </header>
 
         <main>
+            <section class="post-summary">
+                <h1 id="post-title">Title</h1>
+                <p id="post-body">body message for post</p>
+            </section>
+
             <p id="error-display" class="error"></p>
-            <ul id="post-list"></ul>
+            <div>
+                <form id="add-comment-form" class="inline">
+                    <input name="text" placeholder="add a comment" />
+                    <button>Add Comment</button>
+                </form>
+            </div>
+            <ul id="comment-list"></ul>
         </main>
     </body>
 </html>
