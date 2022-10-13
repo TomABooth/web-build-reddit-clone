@@ -1,5 +1,4 @@
 //Imports
-import '../auth/user.js';
 import { addPost } from '../fetch-utils.js';
 
 //DOM Elements

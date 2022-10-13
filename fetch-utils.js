@@ -31,3 +31,35 @@ export async function signOutUser() {
 export async function getPosts() {
     return await client.from('reddit').select('*');
 }
+
+export async function addPost(post) {
+    return await client.from('reddit').insert(post).single();
+}
+
+export async function getPost(id) {
+    return await client
+        .from('reddit')
+        .select(`*, comments(*)`)
+        .eq('id', id)
+        .order('created_at', { foreigntable: 'comments', ascending: false })
+        .single();
+}
+
+export async function createComment(comment) {
+    return client.from('comments').insert(comment).single();
+}
+
+// export async function getComment(id) {
+//     return await client
+//         .from('comments')
+//         .select(
+//             `*,
+//         // user:users(
+//         //     id,
+//         //     username
+//         )
+//         `
+//         )
+//         .eq('id', id)
+//         .single();
+// }

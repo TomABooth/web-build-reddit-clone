@@ -7,12 +7,15 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
         <!-- title and favicon -->
-        <title>Supabase Web App</title>
+        <title>❤️ Post-Page</title>
         <link rel="icon" type="image/x-icon" href="/assets/alchemy-favicon.png" />
 
         <!-- js -->
-        <script defer src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js"></script>
-        <script type="module" src="app.js"></script>
+        <script
+            defer
+            src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@1.35.7/dist/umd/supabase.min.js"
+        ></script>
+        <script type="module" src="thread.js"></script>
 
         <!-- fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,35 +28,37 @@
         <!-- css -->
         <link rel="stylesheet" href="/styles/reset.css" />
         <link rel="stylesheet" href="/styles/global.css" />
-        <!-- add link for page specific css -->
+        <link rel="stylesheet" href="/add-post/add-post.css" />
+        <link rel="stylesheet" href="thread.css" />
     </head>
 
     <body>
         <header class="page-header">
             <img class="logo" src="/assets/html_css_js.png" alt="logo" />
-            <p class="title">Supabase Web App</p>
+            <p class="title">Post-Page</p>
             <nav>
                 <a href="/">Home</a>
-                <a id="sign-out-link" href="auth">Sign Out</a>
+                <a href="/add-post/index.html">Add Post</a>
+                <a id="sign-out-link" href="/auth">Sign Out</a>
             </nav>
         </header>
 
         <main>
-            <form id="post-form">
-                <label>
-                    <div>Title</div>
-                    <input name="title" required placeholder="Add a title" />
-                </label>
-                <label>
-                    <div>Body</div>
-                    <textarea
-                        name="body"
-                        required
-                        placeholder="What do you want to say?"
-                    ></textarea>
-                </label>
-                <button>Add post</button>
-            </form>
+            <section id="thread-summary" class="post-summary">
+                <h1 id="thread-name">Post</h1>
+                <p id="thread-description">Description</p>
+            </section>
+
+            <p id="error-display" class="error"></p>
+
+            <div>
+                <form id="add-comment-form" class="inline">
+                    <input name="text" placeholder="add a comment..." />
+                    <button>Send</button>
+                </form>
+            </div>
+
+            <ul id="comment-list"></ul>
         </main>
     </body>
 </html>
